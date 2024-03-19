@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>pokedex</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="template.js"></script>
+    <script src="https://kit.fontawesome.com/7106d32a85.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body onload="render()">
+    <wrapper>
+        <div class="header">
+            <img class="logo" src="./img/logo.svg" alt="">
+            <div class="search">
+                <input id="searchInput" oninput="search()" type="text" class="searchTerm" placeholder="Search 'Em All">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div style="position: relative;">
+            <div id="content">
+            </div>
+            <div id="search" class="searchContent d-none"></div>
+        </div>
+    </wrapper>
+</body>
+
+</html>

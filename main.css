@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+wrapper {
+    background: linear-gradient(90deg, #26547c, #06d6a0);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    position: relative;
+}
+
+#content {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    padding: 0;
+    border: none;
+    animation: stuff 4s forwards;
+    z-index: 2;
+}
+
+.header {
+    background-color: #FECB06;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+
+@keyframes stuff {
+
+    0% {
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        position: fixed;
+    }
+
+    50% {
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        position: fixed;
+    }
+
+    100% {
+        width: 165px;
+        top: 2em;
+        left: 7em;
+        padding: 5px;
+        position: fixed;
+
+    }
+}
+
+
+
+.search {
+    width: 210px;
+    position: relative;
+    display: flex;
+    margin-right: 2rem;
+    z-index: 2;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #3468AF;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #3468AF;
+}
+
+.searchTerm:focus {
+    color: #3468AF;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #3468AF;
+    background: #3468AF;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.info {
+    height: 50px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.psychic {
+    background-color: #FE607B
+}
+
+.water {
+    background-color: #2D91FE
+}
+
+.fire {
+    background-color: #FE6031
+}
+
+.grass {
+    background-color: #40BE27
+}
+
+.ground {
+    background-color: #AA783D
+}
+
+.rock {
+    background-color: #B8BA84
+}
+
+.steel {
+    background-color: #6BB1D5
+}
+
+.ice {
+    background-color: #44D5FE
+}
+
+.electric {
+    background-color: #FCDB00
+}
+
+.dragon {
+    background-color: #5462D5
+}
+
+.ghost {
+    background-color: #FDFDFD
+}
+
+.normal {
+    background-color: #979797
+}
+
+.fighting {
+    background-color: #FEA200
+}
+
+.poison {
+    background-color: #9750CE
+}
+
+.bug {
+    background-color: #459F46
+}
+
+.flying {
+    background-color: #96CAFC
+}
+
+.dark {
+    background-color: #484848
+}
+
+.fairy {
+    background-color: #FFAFFE
+}
+
+
+.cards {
+    position: relative;
+}
+
+.cardTop {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.card-body {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: -50px;
+    align-items: center;
+    height: 70%;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+.cardBG {
+    position: absolute;
+    top: 38px;
+    width: 75%;
+}
+
+.cardImg {
+    z-index: 1;
+    position: relative;
+    width: 94%;
+    margin-top: -65px;
+    transition: all 225ms;
+}
+
+
+.cardImg:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.cardName {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.cardName::first-letter {
+    text-transform: capitalize;
+}
+
+
+.cardTypes {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    z-index: 1;
+    margin-top: -19px;
+}
+
+.cardTypes img {
+    height: 100%;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+    perspective: 1000px;
+    border-radius: 10px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+/* Do an horizontal flip when you toggle flipped */
+.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.cardBackImages {
+    display: flex;
+}
+
+.cardImgBack {
+    z-index: 1;
+    height: 80px;
+}
+
+.typesBack {
+    z-index: 1;
+    height: 80px;
+    display: flex;
+}
+
+.card-body-back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: -50px;
+    align-items: center;
+    height: 70%;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+.infoTable {
+    text-align: left;
+    line-height: 25px;
+}
+
+.progress-bar {
+    width: 150px;
+    background-color: #e0e0e0;
+    padding: 3px;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.progress-bar-fill {
+    display: block;
+    height: 12px;
+    background-color: #659cef;
+    border-radius: 3px;
+
+    transition: width 500ms ease-in-out;
+}
+
+.searchContent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.d-none {
+    display: none !important;
+}
+
+@media screen and (max-width: 500px) {
+    .logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        padding: 0;
+        border: none;
+        animation: stuff 4s forwards;
+        z-index: 1;
+    }
+
+    @keyframes stuff {
+
+        0% {
+            width: 350px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            position: fixed;
+        }
+
+        50% {
+            width: 350px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            position: fixed;
+        }
+
+        100% {
+            width: 105px;
+            top: 1.5em;
+            left: 3.5em;
+            padding: 5px;
+            position: fixed;
+        }
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 100vh;
+        box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+        perspective: 1000px;
+        border-radius: 10px;
+        scroll-snap-align: center;
+    }
+
+    .header {
+        height: 5vh;
+    }
+
+    #content {
+        padding-top: 0;
+        gap: 0;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        height: 95vh;
+
+
+    }
+
+    .cardTop {
+        height: 23rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 10px;
+        padding-top: 88px;
+    }
+
+    .card-body {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        margin-top: -50px;
+        align-items: center;
+        height: 77%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+
+    .cardTypes {
+        display: flex;
+        height: 106px;
+        justify-content: center;
+        z-index: 1;
+        margin-top: 473px;
+        position: absolute;
+    }
+
+    .searchContent {
+        padding-top: 0;
+        gap: 0;
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+    }
+
+    .search {
+        margin-right: 1rem;
+    }
+}
